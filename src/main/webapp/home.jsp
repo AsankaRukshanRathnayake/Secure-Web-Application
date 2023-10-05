@@ -34,7 +34,7 @@
 		
 		<section>
 			<div>
-				<form>
+				<form action="ReservationServlet" method="POST">
 					<h2>Make A Reservation</h2>
 					
 					<table>
@@ -114,6 +114,8 @@
 							</td>
 						</tr>
 					</table>
+					
+					<input type="submit" value="Add">
 				</form>
 			</div>
 		</section>
