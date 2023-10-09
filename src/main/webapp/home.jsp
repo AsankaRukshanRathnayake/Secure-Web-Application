@@ -1,3 +1,11 @@
+<%@ page import="java.util.*" %>
+<%@ page import="com.vehicleserviceapp.controller.*" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="com.vehicleserviceapp.controller.Crud" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.sql.SQLException" %>
+
 <html>
 	<head>
 		<title>Home</title>
@@ -122,9 +130,54 @@
 			</div>
 			
 			<div>
-				<h4>Reservations</h4>
-				
-				
+				 <h1>Reservations</h1>
+
+    <%
+        try {
+            List<String[]> myList = Crud.displayReservations("user1");
+
+            // Check if myList is not null and not empty
+            if (myList != null && !myList.isEmpty()) {
+    %>
+    <table border="1">
+        <tr>
+        	<th>Booking ID</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Vehicle Number</th>
+            <th>Mileage</th>
+            <th>Message</th>
+        </tr>
+        <%
+            for (String[] array : myList) {
+        %>
+        <tr>
+            <td><%= array[0] %></td>
+            <td><%= array[1] %></td>
+            <td><%= array[2] %></td>
+            <td><%= array[3] %></td>
+            <td><%= array[4] %></td>
+            <td><%= array[5] %></td>
+            <td><%= array[6] %></td>
+        </tr>
+        <%
+            }
+        %>
+    </table>
+    <%
+            } else {
+    %>
+    <p>No reservations found for this user.</p>
+    <%
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+    %>
+    <p>An error occurred while retrieving reservations.</p>
+    <%
+        }
+    %>
 			</div>
 		</section>
 	</body>
