@@ -45,9 +45,9 @@
 						<tr>
 							<td><label for="reservationTime">Reservation Time</label></td>
 							<td>
-								<input type="radio" name="reservationTime" value="10AM" required>10AM
-								<input type="radio" name="reservationTime" value="11AM" required>11AM
-								<input type="radio" name="reservationTime" value="12PM" required>12PM
+								<input type="radio" name="reservationTime" value="10:00" required>10.00AM
+								<input type="radio" name="reservationTime" value="11:00" required>11.00AM
+								<input type="radio" name="reservationTime" value="12:00" required>12.00PM
 							</td>
 						</tr>
 						<tr>
@@ -115,8 +115,16 @@
 						</tr>
 					</table>
 					
+					<input type="hidden" name="username" value="user1">
+					
 					<input type="submit" value="Add">
 				</form>
+			</div>
+			
+			<div>
+				<h4>Reservations</h4>
+				
+				
 			</div>
 		</section>
 	</body>
